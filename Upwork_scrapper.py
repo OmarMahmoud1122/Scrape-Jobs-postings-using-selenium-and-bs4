@@ -6,7 +6,7 @@ from selenium.webdriver import EdgeOptions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-xx = {
+headers = {
   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:66.0) Gecko/20100101 Firefox/66.0",
   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
   "Accept-Language": "en-US,en;q=0.5",
@@ -25,7 +25,7 @@ def upworkjobs(job_title, no_of_pages):
     pages = no_of_pages
     for i in range(1,pages+1):
         
-        website = requests.get(f'https://www.upwork.com/nx/search/jobs/?page={i}&q={new_job}&sort=recency', headers= xx)
+        website = requests.get(f'https://www.upwork.com/nx/search/jobs/?page={i}&q={new_job}&sort=recency', headers= headers)
         soup = BeautifulSoup(website.text,'html.parser')
         
         x = soup.find_all('article')
@@ -38,5 +38,5 @@ def upworkjobs(job_title, no_of_pages):
     data = pd.DataFrame({'Title': title, 'Description': desc, 'Details': details  ,'Link': link })
     return data
     
-yy = upworkjobs('data', 2)
-yy.to_csv(r'C:\Users\omars\OneDrive\Desktop\upworkjobs.csv')
+df = upworkjobs('data', 2)
+print(df)
