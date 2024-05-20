@@ -1,10 +1,6 @@
 import pandas as pd
 from bs4 import BeautifulSoup
 import requests
-from selenium import webdriver
-from selenium.webdriver import EdgeOptions
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 
 headers = {
   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:66.0) Gecko/20100101 Firefox/66.0",
