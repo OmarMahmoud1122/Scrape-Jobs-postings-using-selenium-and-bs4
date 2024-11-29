@@ -57,5 +57,5 @@ if __name__ == '__main__':
   driver.quit()
   data = pd.DataFrame({'Title': title, 'Description': desc, 'Details': details  ,'Link': link })
   data.index = data.index + 1
-  data.to_csv(r'C:\Users\omars\OneDrive\Desktop\scrappers\Scrapper_upwork1.csv')
+  data.to_csv(r'')
   print(data)
